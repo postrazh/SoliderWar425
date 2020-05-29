@@ -1,0 +1,17 @@
+{
+  "name": "awslambdanodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "tsc awsLambda.ts; zip -r function.zip awsLambda.js node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.12.14",
+    "aws-sdk": "^2.585.0"
+  }
+}
