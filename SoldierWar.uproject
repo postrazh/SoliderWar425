@@ -28,6 +28,11 @@
 			"Name": "LoadingScreen",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/fccf720569d0423cae9a55d2415597ca"
+		},
+		{
+			"Name": "EasyFirebasePro",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/fea82456fb0d4609a9c30bbb518b7f93"
 		}
 	]
 }

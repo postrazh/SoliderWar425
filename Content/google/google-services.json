@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "190358660731",
+    "firebase_url": "https://soldierwar-8598e.firebaseio.com",
+    "project_id": "soldierwar-8598e",
+    "storage_bucket": "soldierwar-8598e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190358660731:android:a2fa0eb588294ca47924de",
+        "android_client_info": {
+          "package_name": "com.kelvin.soldierwar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190358660731-pi9p5aes8h2h4fdk7k8bm2ddsbj7s2ft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kelvin.soldierwar",
+            "certificate_hash": "cb5ab4fa24a8e1033809eb34e64a66042b1e3bde"
+          }
+        },
+        {
+          "client_id": "190358660731-suloliclkorfqhqkn0i040vhkds8leak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOQUgnW57tPT-J0T9fh9-u3pHW4l_-qcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190358660731-suloliclkorfqhqkn0i040vhkds8leak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
