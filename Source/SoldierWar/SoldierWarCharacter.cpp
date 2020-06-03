@@ -1,6 +1,6 @@
 // Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
 
-#include "GameLiftTutorialCharacter.h"
+#include "SoldierWarCharacter.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -10,9 +10,9 @@
 #include "GameFramework/SpringArmComponent.h"
 
 //////////////////////////////////////////////////////////////////////////
-// AGameLiftTutorialCharacter
+// ASoldierWarCharacter
 
-AGameLiftTutorialCharacter::AGameLiftTutorialCharacter()
+ASoldierWarCharacter::ASoldierWarCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -50,61 +50,61 @@ AGameLiftTutorialCharacter::AGameLiftTutorialCharacter()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
-void AGameLiftTutorialCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void ASoldierWarCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &AGameLiftTutorialCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AGameLiftTutorialCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &ASoldierWarCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ASoldierWarCharacter::MoveRight);
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("TurnRate", this, &AGameLiftTutorialCharacter::TurnAtRate);
+	PlayerInputComponent->BindAxis("TurnRate", this, &ASoldierWarCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("LookUpRate", this, &AGameLiftTutorialCharacter::LookUpAtRate);
+	PlayerInputComponent->BindAxis("LookUpRate", this, &ASoldierWarCharacter::LookUpAtRate);
 
 	// handle touch devices
-	PlayerInputComponent->BindTouch(IE_Pressed, this, &AGameLiftTutorialCharacter::TouchStarted);
-	PlayerInputComponent->BindTouch(IE_Released, this, &AGameLiftTutorialCharacter::TouchStopped);
+	PlayerInputComponent->BindTouch(IE_Pressed, this, &ASoldierWarCharacter::TouchStarted);
+	PlayerInputComponent->BindTouch(IE_Released, this, &ASoldierWarCharacter::TouchStopped);
 
 	// VR headset functionality
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AGameLiftTutorialCharacter::OnResetVR);
+	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ASoldierWarCharacter::OnResetVR);
 }
 
 
-void AGameLiftTutorialCharacter::OnResetVR()
+void ASoldierWarCharacter::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
 
-void AGameLiftTutorialCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
+void ASoldierWarCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
 		Jump();
 }
 
-void AGameLiftTutorialCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
+void ASoldierWarCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
 {
 		StopJumping();
 }
 
-void AGameLiftTutorialCharacter::TurnAtRate(float Rate)
+void ASoldierWarCharacter::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
-void AGameLiftTutorialCharacter::LookUpAtRate(float Rate)
+void ASoldierWarCharacter::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
-void AGameLiftTutorialCharacter::MoveForward(float Value)
+void ASoldierWarCharacter::MoveForward(float Value)
 {
 	if ((Controller != NULL) && (Value != 0.0f))
 	{
@@ -118,7 +118,7 @@ void AGameLiftTutorialCharacter::MoveForward(float Value)
 	}
 }
 
-void AGameLiftTutorialCharacter::MoveRight(float Value)
+void ASoldierWarCharacter::MoveRight(float Value)
 {
 	if ( (Controller != NULL) && (Value != 0.0f) )
 	{

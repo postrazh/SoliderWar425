@@ -1,10 +1,10 @@
 // Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
 
-#include "GameLiftTutorialGameMode.h"
-#include "GameLiftTutorialCharacter.h"
+#include "SoldierWarGameMode.h"
+#include "SoldierWarCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
-AGameLiftTutorialGameMode::AGameLiftTutorialGameMode()
+ASoldierWarGameMode::ASoldierWarGameMode()
 {
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter"));

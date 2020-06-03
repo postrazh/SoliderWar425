@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class GameLiftTutorial : ModuleRules
+public class SoldierWar : ModuleRules
 {
-	public GameLiftTutorial(ReadOnlyTargetRules Target) : base(Target)
+	public SoldierWar(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 

@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "GameLiftTutorialCharacter.generated.h"
+#include "SoldierWarCharacter.generated.h"
 
 UCLASS(config=Game)
-class AGameLiftTutorialCharacter : public ACharacter
+class ASoldierWarCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -19,7 +19,7 @@ class AGameLiftTutorialCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 public:
-	AGameLiftTutorialCharacter();
+	ASoldierWarCharacter();
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
